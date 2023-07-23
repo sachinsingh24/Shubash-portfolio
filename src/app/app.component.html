@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-12 col-md-6">
           <div class="logo-wrap">
-            <img src="" alt="" class="img-flid" />
+            <img src="../assets/img/logo.png" alt="" class="img-flid" />
           </div>
         </div>
         <div class="col-12 col-md-6">
@@ -22,14 +22,18 @@
       <div class="row">
         <div class="col-12 col-md-6">
           <div class="all-txt-wrap">
-            <h6 class="small-title">Lorem, ipsum dolor.</h6>
+            <h6 class="small-title">
+              Grow Your Business With One On One Business Coaching For 1 Year
+            </h6>
             <h3 class="title">
-              Grow Your Business To It's Fullest Potential -
+              Most Of The Service Providers Are Struggling To Increase Their
+              Revenue Even After Working So Hard For So Many Years,
             </h3>
             <p class="p14">
-              I will coach you to grow your business exponentially & free your
-              own personal time & involvement so that you can do the things you
-              love doing, while your business keeps growing!
+              I Am A Certified International Business Coach, I Work With Growth
+              Minded Service Providers & Help Them To Learn Marketing & Sales
+              Strategies And Tools To Double Their Revenue So That They Can
+              Enjoy Stress Free Continuous Growth In Their Business.
             </p>
             <button class="transperent-btn">
               Schedule A Free Call To Grow Your Business
@@ -38,7 +42,7 @@
         </div>
         <div class="col-12 col-md-6">
           <div class="main-img-wrap">
-            <img src="" alt="" class="img-flid" />
+            <img src="../assets/img/mainImg.png" alt="" class="img-flid" />
           </div>
         </div>
       </div>
@@ -61,7 +65,7 @@
       <div class="row">
         <div
           class="col-12 col-md-6 col-lg-4"
-          *ngFor="let data of [0, 1, 2, 3, 4, 5]"
+          *ngFor="let data of growYourBusiness"
         >
           <div class="card-wrap">
             <div class="icon">
@@ -71,10 +75,9 @@
                 ></path>
               </svg>
             </div>
-            <h6 class="card-title">Frustration</h6>
+            <h6 class="card-title">{{ data?.TITLE }}</h6>
             <p class="p-card">
-              You are <b>frustrated</b> that even after working so hard you
-              still don't make enough money personally
+              {{ data?.MAIN }}
             </p>
           </div>
         </div>
@@ -97,12 +100,12 @@
           <h3 class="title red">
             Your Worries End Here!
             <br />
-            There Is A System That Can Help You Grow Your Business To It's
-            Fullest Potential!
+            There Is A Proven System That Can Help You To Grow Your Business
+            Through Our One On One Business Coaching Programme
           </h3>
           <h3 class="title">
-            3 Simple Steps To Grow Your Business To It's Fullest Potential,
-            Fast!
+            {{ worryData.length }} Simple Steps To Grow Your Business To It's
+            Fullest Potential, Fast!
           </h3>
           <h6 class="sub-title">
             End the pain and misery of growing your business alone, by putting
@@ -111,16 +114,15 @@
         </div>
         <div
           class="col-12 col-md-6 col-lg-4 mx-auto"
-          *ngFor="let data of [1, 2, 3]"
+          *ngFor="let data of worryData; let i = index"
         >
           <div class="card-wrap">
             <div class="points-main">
-              <div class="count">0{{ data }}</div>
+              <div class="count">0{{ i + 1 }}</div>
             </div>
-            <h5 class="card-title">Assess Your Business</h5>
+            <h5 class="card-title">{{ data?.TITLE }}</h5>
             <p class="p-16">
-              Book a 1 hour call where we can do a quick assessment of your
-              business and see a fitment with each other.
+              {{ data?.MAIN }}
             </p>
           </div>
         </div>
@@ -146,27 +148,39 @@
       <div class="row">
         <div class="col-12 col-md-6">
           <div class="about-img-wrap">
-            <img src="" alt="" class="img-fluid" />
+            <img src="../assets/img/aboutImg.jpeg" alt="" class="img-fluid" />
           </div>
         </div>
         <div class="col-12 col-md-6">
           <h5 class="title">About <span>Me.</span></h5>
           <div class="social-icon-wrap">
-            <div class="icon facebook">
+            <div
+              class="icon facebook"
+              role="button"
+              (click)="onClickSocial('facebook')"
+            >
               <svg viewBox="0 0 264 512">
                 <path
                   d="M215.8 85H264V3.6C255.7 2.5 227.1 0 193.8 0 124.3 0 76.7 42.4 76.7 120.3V192H0v91h76.7v229h94V283h73.6l11.7-91h-85.3v-62.7c0-26.3 7.3-44.3 45.1-44.3z"
                 ></path>
               </svg>
             </div>
-            <div class="icon insta">
+            <div
+              class="icon insta"
+              role="button"
+              (click)="onClickSocial('instagram')"
+            >
               <svg viewBox="0 0 448 512">
                 <path
                   d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
                 ></path>
               </svg>
             </div>
-            <div class="icon linkiden">
+            <div
+              class="icon linkiden"
+              role="button"
+              (click)="onClickSocial('linkedin')"
+            >
               <svg viewBox="0 0 448.1 512">
                 <path
                   d="M100.3 448H7.4V148.9h92.9V448zM53.8 108.1C24.1 108.1 0 83.5 0 53.8S24.1 0 53.8 0s53.8 24.1 53.8 53.8-24.1 54.3-53.8 54.3zM448 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448h-.1z"
@@ -176,35 +190,39 @@
           </div>
           <div class="para-wrap">
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
-              voluptatum modi, tempore harum asperiores porro nisi obcaecati
-              exercitationem deleniti velit.
+              I Am An International Business Coach.I Work With Growth Minded
+              Service Providers like Architects & Interior Designers, IT
+              Consultants, Software Developers, and Web & Social Media
+              Consultants.
             </p>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
-              voluptatum modi, tempore harum asperiores porro nisi obcaecati
-              exercitationem deleniti velit.
+               I Am Passionate About Transforming People And Businesses. I Am
+              Also A Certified Transformation Coach & I Have Been Personally
+              Trained By America’s Leading Success Coach, Mr. Jack Canfield,
+              Co-author Of The International Best Seller “Chicken Soup For The
+              Soul” And The Success Principles”.
             </p>
             <p>
+              I Am An Electronics & Telecommunication Engineer From Mumbai
+              Univeristy Having A Wide Range Of Experience On International
+              Level In Areas Like Telecom Operations, Project Management,
+              Service Delivery, And Resource Management
+            </p>
+            <!-- <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
               voluptatum modi, tempore harum asperiores porro nisi obcaecati
               exercitationem deleniti velit.
-            </p>
+            </p> -->
             <p>
+              My Vision Is “To Educate, Train & Motivate 1 Lac Sme’s Across Pan
+              India To Win & Achieve Their Business Goal By Adding A True Value
+              By Dec’2032”
+            </p>
+            <!-- <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
               voluptatum modi, tempore harum asperiores porro nisi obcaecati
               exercitationem deleniti velit.
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
-              voluptatum modi, tempore harum asperiores porro nisi obcaecati
-              exercitationem deleniti velit.
-            </p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
-              voluptatum modi, tempore harum asperiores porro nisi obcaecati
-              exercitationem deleniti velit.
-            </p>
+            </p> -->
           </div>
         </div>
       </div>
@@ -217,11 +235,16 @@
           <h6 class="small-title">TESTIMONIALS</h6>
           <h3 class="title">Check What Our Clients Say About Us</h3>
         </div>
-        <div class="col-12 col-md-6" *ngFor="let data of [0, 1, 2, 3, 4, 5, 6]">
+        <div class="col-12 col-md-6" *ngFor="let data of testimonialsData">
           <div class="card-wrap">
             <div class="img-wrap">
               <div class="user-img-o">
-                <img src="" alt="" class="img-fluid" />
+                <img
+                  [src]="data?.IMG"
+                  onerror="this.src='../assets/img/defaultUser.png'"
+                  alt=""
+                  class="img-fluid"
+                />
               </div>
               <div class="coma">
                 <svg viewBox="0 0 512 512">
@@ -233,13 +256,10 @@
             </div>
             <div class="txt-wrap">
               <p class="p14">
-                I've been moving my business to the next level ever since I've
-                been attending the Business Growth Mastermind sessions and I am
-                almost at the verge of completing my business model by the end
-                of this month.
+                {{ data?.MAIN }}
               </p>
-              <div class="name">Harshit Gala</div>
-              <div class="industry">BRAND DESIGN</div>
+              <div class="name">{{ data?.NAME }}</div>
+              <div class="industry">{{ data?.DESC }}</div>
             </div>
           </div>
         </div>
@@ -256,7 +276,7 @@
   <section class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-md-6 col-lg-4 mx-auto">
+        <!-- <div class="col-12 col-md-6 col-lg-4 mx-auto">
           <div class="footer-title">CATEGORIES</div>
           <ul>
             <li>Business Strategy</li>
@@ -264,7 +284,7 @@
             <li>Mindset</li>
             <li>Uncategorized</li>
           </ul>
-        </div>
+        </div> -->
         <div class="col-12 col-md-6 col-lg-4 mx-auto">
           <div class="footer-title">CONTACT</div>
           <ul>
@@ -276,31 +296,51 @@
               Maharashtra, India - 400607
             </li>
             <li>
-              <span class="icon"
-                ><i class="fa fa-phone" aria-hidden="true"></i></span
-              >9833401014
+              <a href="tel:+919702376872">
+                <span class="icon"
+                  ><i class="fa fa-phone" aria-hidden="true"></i></span
+                >9702376872
+              </a>
             </li>
             <li>
-              <span class="icon"
-                ><i class="fa fa-envelope" aria-hidden="true"></i
-              ></span>
-              sanjay@bigbusinessresults.com
+              <a href="mailto:shubhaway1@gmail.com">
+                <span class="icon"
+                  ><i class="fa fa-envelope" aria-hidden="true"></i
+                ></span>
+                shubhaway1@gmail.com
+              </a>
             </li>
           </ul>
         </div>
         <div class="col-12 col-md-6 col-lg-4 mx-auto">
           <div class="footer-title">SOCIAL</div>
           <div class="socal-wrap">
-            <div class="icon facebook">
+            <div
+              class="icon facebook"
+              (click)="onClickSocial('facebook')"
+              role="button"
+            >
               <i class="fa fa-facebook" aria-hidden="true"></i>
             </div>
-            <div class="icon twitter">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
+            <div
+              class="icon twitter"
+              (click)="onClickSocial('linkedin')"
+              role="button"
+            >
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
             </div>
-            <div class="icon print">
-              <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            <div
+              class="icon print"
+              (click)="onClickSocial('instagram')"
+              role="button"
+            >
+              <i class="fa fa-instagram" aria-hidden="true"></i>
             </div>
-            <div class="icon youtube">
+            <div
+              class="icon youtube"
+              (click)="onClickSocial('youtube')"
+              role="button"
+            >
               <i class="fa fa-youtube-play" aria-hidden="true"></i>
             </div>
           </div>

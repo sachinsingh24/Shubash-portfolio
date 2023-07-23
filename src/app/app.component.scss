@@ -37,7 +37,14 @@
     .top-main {
         color: #fff;
         background: #320101;
-        padding: 30px 0;
+        padding: 30px 0 0;
+
+        .main-img-wrap {
+            img {
+                margin-left: auto;
+                display: block;
+            }
+        }
 
         .all-txt-wrap {
             .small-title {
@@ -201,7 +208,16 @@
         padding: 70px 0;
         background: #fbfbfb;
 
-        .about-img-wrap {}
+        .about-img-wrap {
+            overflow: hidden;
+
+            img {
+                width: 80%;
+                margin: 0 auto;
+                display: block;
+                border-radius: 15px;
+            }
+        }
 
         .title {
             font-size: 28px;
