@@ -101,14 +101,14 @@ export class AppComponent {
       DESC: 'EVENT MANAGEMENT',
     },
     {
-      MAIN: 'Learnings you share are very practical and are based on solutions. Actions you suggest are realistic and doable for small entrepreneurs.',
-      NAME: 'Somnath',
-      DESC: 'CERTIFIED STOCK BROKER',
-    },
-    {
       MAIN: "I've been moving my business to the next level ever since I've been attending the Business Growth Mastermind sessions and I am almost at the verge of completing my business model by the end of this month.",
       NAME: 'Jadhav',
       DESC: 'BUSINESS OWNER',
+    },
+    {
+      MAIN: 'Learnings you share are very practical and are based on solutions. Actions you suggest are realistic and doable for small entrepreneurs.',
+      NAME: 'Somnath',
+      DESC: 'CERTIFIED STOCK BROKER',
     },
   ];
 
