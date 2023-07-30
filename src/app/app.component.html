@@ -9,7 +9,7 @@
         </div>
         <div class="col-12 col-md-6">
           <div class="btn-wrap">
-            <button class="transperent-btn">
+            <button class="transperent-btn" (click)="openPopup()">
               Grow Your Business Exponentially
             </button>
           </div>
@@ -35,7 +35,7 @@
               Strategies And Tools To Double Their Revenue So That They Can
               Enjoy Stress Free Continuous Growth In Their Business.
             </p>
-            <button class="transperent-btn">
+            <button class="transperent-btn" (click)="openPopup()">
               Schedule A Free Call To Grow Your Business
             </button>
           </div>
@@ -53,7 +53,8 @@
       <div class="row">
         <div class="col-12">
           <h5 class="title">
-            Are You Worried, frustrated And Tired About Your Business Not Growing Exponentially?
+            Are You Worried, frustrated And Tired About Your Business Not
+            Growing Exponentially?
           </h5>
           <!-- <h6 class="sub-title">
             In our experience of dealing with over 7000 businesses, we see a lot
@@ -68,11 +69,9 @@
         >
           <div class="card-wrap">
             <div class="icon">
-              <svg class="svg-icon" viewBox="0 0 24 24">
-                <path
-                  d="M20 12A8 8 0 1 0 12 20A8 8 0 0 0 20 12M22 12A10 10 0 1 1 12 2A10 10 0 0 1 22 12M15.5 8A1.5 1.5 0 1 1 14 9.5A1.54 1.54 0 0 1 15.5 8M10 9.5A1.5 1.5 0 1 1 8.5 8A1.54 1.54 0 0 1 10 9.5M17 15H13A4 4 0 0 0 9.53 17L7.8 16A6 6 0 0 1 13 13H17Z"
-                ></path>
-              </svg>
+              <div class="svg-icon">
+                <i class="{{ data?.ICON }}" aria-hidden="true"></i>
+              </div>
             </div>
             <h6 class="card-title">{{ data?.TITLE }}</h6>
             <p class="p-card">
@@ -84,7 +83,7 @@
       <div class="row">
         <div class="col-12">
           <div class="btn-wrap">
-            <button class="call-btn">
+            <button class="call-btn" (click)="openPopup()">
               Schedule A Free Call To Grow Your Business
             </button>
           </div>
@@ -134,7 +133,7 @@
             apply something new
           </h3>
           <div class="btn-wrap">
-            <button class="call-btn">
+            <button class="call-btn" (click)="openPopup()">
               Schedule A Free Call To Grow Your Business
             </button>
           </div>
@@ -188,17 +187,18 @@
             </div>
           </div>
           <div class="para-wrap">
-            <p>
+            <div class="">
               I Am An International Business Coach.I Work With Growth Minded
               Service Providers Including:
-              <!-- <ul>
+              <ul>
                 <li>Architects & Interior Designers</li>
                 <li>IT Consultants</li>
                 <li>Software Developers</li>
                 <li>Web & Social Media Consultants</li>
-              </ul> -->
-            </p>
-            <p>I Am Passionate About Transforming People And Businesses. I Am
+              </ul>
+            </div>
+            <p>
+              I Am Passionate About Transforming People And Businesses. I Am
               Also A Certified Transformation Coach & I Have Been Personally
               Trained By America’s Leading Success Coach, Mr. Jack Canfield,
               Co-author Of The International Best Seller “Chicken Soup For The
@@ -237,7 +237,7 @@
           <h6 class="small-title">TESTIMONIALS</h6>
           <h3 class="title">Check What Our Clients Say About Us</h3>
         </div>
-        <div class="col-12 col-md-6 " *ngFor="let data of testimonialsData">
+        <div class="col-12 col-md-6" *ngFor="let data of testimonialsData">
           <div class="card-wrap">
             <div class="img-wrap">
               <div class="user-img-o">
@@ -267,7 +267,7 @@
         </div>
         <div class="col-12">
           <div class="btn-wrap">
-            <button class="call-btn">
+            <button class="call-btn" (click)="openPopup()">
               Schedule A Free Call To Grow Your Business
             </button>
           </div>
@@ -278,15 +278,6 @@
   <section class="footer">
     <div class="container">
       <div class="row">
-        <!-- <div class="col-12 col-md-6 col-lg-4 mx-auto">
-          <div class="footer-title">CATEGORIES</div>
-          <ul>
-            <li>Business Strategy</li>
-            <li>Marketing</li>
-            <li>Mindset</li>
-            <li>Uncategorized</li>
-          </ul>
-        </div> -->
         <div class="col-12 col-md-6 col-lg-4 mx-auto">
           <div class="footer-title">CONTACT</div>
           <ul>
@@ -294,8 +285,8 @@
               <span class="icon"
                 ><i class="fa fa-map-marker" aria-hidden="true"></i
               ></span>
-              206, 2nd Floor, Emerald Plaza Block 4, Hiranandani Meadows, Thane,
-              Maharashtra, India - 400607
+              Address:902,Aum Shree CHS,Plot
+              No-28,Sector-4,Karnjade,Panvel-410206
             </li>
             <li>
               <a href="tel:+919702376872">
@@ -355,4 +346,88 @@
       </div>
     </div>
   </section>
+
+  <!-- Modal -->
+  <div class="popup-overlay" id="popup" *ngIf="isPopup">
+    <div class="popup-box">
+      <button class="close" (click)="closePopup()">&times;</button>
+      <h2>Contact Form</h2>
+      <form [formGroup]="contactForm">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          formControlName="name"
+        />
+        <div
+          class="required text-danger"
+          *ngIf="
+            formValidationStateContactUs['name']?.errors?.['required'] &&
+            isFormSubmit
+          "
+        >
+          Name is required
+        </div>
+
+        <label for="email">Email ID:</label>
+        <input
+          type="email"
+          id="email"
+          name="email_ID"
+          required
+          formControlName="email"
+        />
+        <div class="required text-danger">
+          <ng-container
+            *ngIf="
+            formValidationStateContactUs['email']?.errors?.['required'] &&
+            isFormSubmit
+          "
+          >
+            Email is required
+          </ng-container>
+          <ng-container
+            *ngIf="
+            formValidationStateContactUs['email']?.errors?.['email'] &&
+            isFormSubmit
+          "
+          >
+            Please Check your Email
+          </ng-container>
+        </div>
+
+        <label for="mobile">Mobile No:</label>
+        <input
+          type="tel"
+          id="mobile"
+          name="mob_No"
+          required
+          formControlName="mobile"
+        />
+
+        <div class="required text-danger">
+          <ng-container
+            *ngIf="
+            formValidationStateContactUs['mobile']?.errors?.['required'] &&
+            isFormSubmit
+          "
+          >
+            Mobile no. is required
+          </ng-container>
+          <ng-container
+            *ngIf="
+            formValidationStateContactUs['mobile']?.errors?.['pattern'] &&
+            isFormSubmit
+          "
+          >
+            Please Check your Mobile No.
+          </ng-container>
+        </div>
+
+        <button type="submit" (click)="submitForm()">Submit</button>
+      </form>
+    </div>
+  </div>
 </div>
