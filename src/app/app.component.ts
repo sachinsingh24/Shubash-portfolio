@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
 
   growYourBusiness: any[] = [
     {
-      ICON: 'fa fa-smile-o',
+      ICON: 'fa fa-face-sad-o',
       TITLE: 'Struggling',
       MAIN: 'Are You Struggling To Generate Quality Leads In Your Business On Regular Basis?',
     },
