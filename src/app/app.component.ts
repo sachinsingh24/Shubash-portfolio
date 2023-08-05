@@ -22,39 +22,64 @@ export class AppComponent implements OnInit {
 
   growYourBusiness: any[] = [
     {
-      ICON: 'fa fa-face-sad-o',
+      IMG: '../assets/img/Struggling.png',
       TITLE: 'Struggling',
       MAIN: 'Are You Struggling To Generate Quality Leads In Your Business On Regular Basis?',
     },
     {
-      ICON: 'fa fa-smile-o',
+      IMG: '../assets/img/Worry.png',
       TITLE: 'Worry',
       MAIN: 'Are You Worried About Competition To Deal With Low Price Competitors?',
     },
     {
-      ICON: 'fa fa-smile-o',
+      IMG: '../assets/img/sale.png',
       TITLE: 'Sale',
       MAIN: 'Are You Worried That Your Business Is Stagnated And No Predictable Sale?',
     },
     {
-      ICON: 'fa fa-smile-o',
+      IMG: '../assets/img/Frustrated.png',
       TITLE: 'Frustrated',
       MAIN: 'Are You Frustrated That Your Sales Team Is Not Having Enough Training On Sales To Convert Leads Into Sales?',
     },
     {
-      ICON: 'fa fa-smile-o',
+      IMG: '../assets/img/Knowledge.png',
       TITLE: 'Lack Of Knowledge',
       MAIN: 'Are You Worried About The Lack Of Knowledge On How To Get Your Employees To Give Their Best?',
     },
     {
-      ICON: 'fa fa-smile-o',
+      IMG: '../assets/img/cash-flow.png',
       TITLE: 'Money Stuck',
       MAIN: 'Are You Worried About The Money Stuck In The Market?',
     },
     {
-      ICON: 'fa fa-smile-o',
+      IMG: '../assets/img/distance.png',
       TITLE: 'Roadmap',
       MAIN: 'Worried About Not Having The Clear Roadmap On How To Proceed From Here To Take It To Next Level.',
+    },
+  ];
+
+  growBusiness: any[] = [
+    {
+      TITLE: 'Assessment - Business Evaluation',
+      POINTS: [
+        { POINT: 'Understand challenges' },
+        { POINT: 'Helps to find the gap' },
+        { POINT: 'Complete audit with 70 questionnaire' },
+      ],
+    },
+    {
+      TITLE: 'Free Business Accelerator Session Of 50 Min',
+      POINTS: [
+        { POINT: 'Build authority & credibility' },
+        { POINT: '60% growth with 10% efort' },
+        { POINT: 'Share 3-4 strategies' },
+        { POINT: 'Recover our Fees' },
+        { POINT: 'Add an addional business of 5-50lac' },
+      ],
+    },
+    {
+      TITLE: 'Signing Coaching Contract',
+      POINTS: [{ POINT: 'Deliver Marketing & Sales Strategies' }],
     },
   ];
 
