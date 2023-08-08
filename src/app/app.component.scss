@@ -48,6 +48,7 @@
         //background: url('../assets/img/pngwing.com.png');
         padding: 30px 0 0;
 
+
         .main-img-wrap {
             img {
                 margin-left: auto;
@@ -101,7 +102,8 @@
                 }
 
                 .txt {
-                    font-size: 25px;
+                    margin-top: 10px;
+                    font-size: 20px;
                     line-height: normal;
                 }
             }
@@ -133,7 +135,9 @@
         .card-wrap {
             border: 2px solid #fff;
             padding: 20px;
+            margin: auto;
             margin-bottom: 20px;
+            min-height: 200px;
 
             .icon {
                 margin-bottom: 10px;
@@ -161,7 +165,7 @@
         }
 
         .btn-wrap {
-            margin: 75px auto 25px;
+            margin: 20px auto 25px;
             max-width: fit-content;
         }
     }
@@ -181,7 +185,7 @@
                 font-size: 26px;
                 color: #36335a;
                 margin-bottom: 30px;
-                margin-top: 75px;
+                margin-top: 15px;
             }
         }
 
@@ -196,10 +200,10 @@
             box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 12px 0px;
             border: none;
             background-color: #fff;
-            padding-bottom: 30px;
-            margin-bottom: 15px;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
             border-radius: 10px;
-            min-height: 300px;
+            min-height: 225px;
 
             .points-main {
                 padding: 20px;
@@ -207,8 +211,8 @@
                 background: #cdcae7;
                 color: #36335a;
                 font-size: 40px;
-                margin-bottom: 50px;
-                border-radius: 0 0 50% 0;
+                margin-bottom: 15px;
+                border-radius: 10px 0 50% 0;
 
                 .count {
                     line-height: 44.5px;
@@ -226,14 +230,16 @@
 
             .p-16 {
                 font-size: 16px;
+                font-weight: 500;
                 padding: 0 20px 30px;
                 color: #5e5f60;
                 margin-bottom: 0;
+                text-align: center;
             }
         }
 
         .mid-txt {
-            margin: 70px 0;
+            margin: 25px 0;
             color: rgba(66, 67, 68, 0.85);
             font-style: italic;
             font-weight: 600;
@@ -243,7 +249,7 @@
         }
 
         .btn-wrap {
-            margin: 75px auto 25px;
+            margin: 20px auto 25px;
             max-width: fit-content;
         }
     }
@@ -251,11 +257,12 @@
     .grow-section {
         .grow-card {
             height: 100%;
+            border-radius: 10px;
         }
     }
 
     .about {
-        padding: 70px 0;
+        padding: 50px 0;
         background: #fbfbfb;
 
         .about-img-wrap {
@@ -382,7 +389,7 @@
         }
 
         .btn-wrap {
-            margin: 40px auto 0;
+            margin: 20px auto 0;
             max-width: fit-content;
         }
     }
@@ -391,10 +398,11 @@
         padding: 40px 0;
 
         .card {
-            aspect-ratio: 1/1;
+            // aspect-ratio: 1/1;
+            height: auto;
 
             .card-body {
-                height: inherit;
+                height: 350px;
 
                 .embed-responsive {
                     height: calc(100% - 25px);
